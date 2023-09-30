@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="content-language" content="vi" />
+    <meta name="robots" content="index, follow'" />
+
+    <meta name="description" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+    <meta name="keywords" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="https://dichvumxh211.io.vn" />
+    <meta property="og:image" content="/storage/userfiles/files/admin6.png" />
+    <meta property="og:description" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+    <meta property="og:site_name" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+    <meta property="article:section" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+    <meta property="article:tag" content="Website Thuộc Bản Quyền HDT - TOOL Cấm Sủ Dụng Code Trái Phép Dưới Mọi Hình Thức" />
+
+    <link rel="icon" href="/storage/userfiles/files/adminfav.png" />
+    <link rel="apple-touch-icon" href="/storage/userfiles/files/adminfav.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/assets/default/plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/assets/default/plugins/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/assets/default/plugins/select2/css/select2.min.css" />
+    <link rel="stylesheet" href="/assets/default/plugins/fancybox/fancybox.min.css" />
+    <link rel="stylesheet" href="/assets/default/fonts/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/default/css/base.css?1691906155" />
+    <link rel="stylesheet" href="/assets/default/css/style.css?1691906155" />
+<meta property="og:image" content="https://s120-ava-talk.zadn.vn/0/7/b/9/38/120/a3a8a88d4801663da40acbb025fe160f.jpg"> 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"> 
+    <script type="text/javascript" src="/assets/default/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/fancybox/fancybox.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/swal/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="/assets/default/plugins/cookie/cookie.min.js"></script>
+    <script type="text/javascript" src="/assets/default/js/app.js?1691906155"></script>
+    <script>
+        function onloadCallback() {
+            grecaptcha.ready(function() {
+                grecaptcha
+                    .execute("", {
+                        action: "homepage",
+                    })
+                    .then(function(token) {
+                        $(".recaptcha_token").val(token);
+                    });
+            });
+        }
+
+        function HideModal() {
+            Cookies.set("Hide", "TRUE", {
+                expires: 1
+            });
+            $("#global-modal").modal("hide");
+        }
+        $(document).ready(function() {
+            if (!Cookies.get("Hide")) {
+                $("#global-modal").modal("show");
+            }
+            $("#dropfile").click(function(event) {
+                $("#uploadfile").trigger("click");
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <header class="header bg-white position-relative z-index-10" id="header">
+        <div class="header-main">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-3">
+                        <div class="header-bar d-flex align-items-center">
+                            <div class="header-hamburger d-block d-lg-none">
+                                <button type="button" class="no-animation" id="header-hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        </button>
+                            </div>
+
+                    <div class="col-lg-6">
+                        <div id="header-navigation" class="header-navigation d-lg-flex align-items-center justify-content-end">
+                            <ul>
+                                <li class="d-block d-lg-none header-navigation_logo">
+                                    <a href="/">
+                           <img src="https://imgur.io/1XnTDa4?r" alt="" style="height:40px">
+                           </a>
+                                    <button type="button" class="header-navigation_close" id="header-navigation_close"><i
+                              class="far fa-times"></i></button>
+                                </li>
+                                <li>
+        <div class="section-gap section-profile">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-10">
+                        <div class="profile-inner">
+                            <div class="profile-avatar">
+                                <img src="https://graph.facebook.com/100088854291408/picture?width=100&height=100&access_token=6628568379|c1e620fa708a1d5696fb991c1bde5662" alt="">
+                            </div>
+                            <div class="profile-title">
+</span> <b>HDT - TOOL</b> <img src="https://i.imgur.com/Fcupuom.gif" alt="Đã Xác Minh" style="height: 23px;">
+                            </div>
+                            <div class="profile-boxs">
+                                <div class="row row-col-15">
+                                    <div class="col-md-6">
+                                        <div class="profile-box" style="border: 1.5px solid var(--primary-color);border-radius: 10px;-moz-border-radius: 24px;-webkit-border-radius:20px;">
+                                            <div class="profile-box_content">
+                                                <div class="profile-box_content__title">
+THÔNG TIN LIÊN HỆ
+                                                </div>
+                                                <div class="profile-box_content__list">
+                                                    <p>
+                                                        <span>
+                                                        <i class="fab fa-facebook-f"></i>
+</span> <b>NHÓM ZALO: </b>
+                                                   <a href="https://zalo.me/g/bprmyn080" target="_blank">
+                                                        https://zalo.me/g/bprmyn080                                                    </a>
+                                                    </p>
+                                                    <p>
+                                                        <span>
+                                                        <img src="/assets/default/images/zalo.webp" alt="">
+</span> <b>YOUTUBE : </b>
+                                                        <a href="https://youtube.com/@HDT-TOOL" target="_blank">
+                                                        https://youtube.com/@HDT-TOOL                                                   </a>
+                                                    </p>
+                                                    <p>
+                                                        <span>
+                                                        <i class="far fa-globe"></i>
+</span> <b>WEBSITE : </b>
+                                                        <a href="https://hdt-tool.blogspot.com">
+https://hdt-tool.blogspot.com                                                    </a>
+  <div class="form">
+        <div>
+            <h3 style="color: rgb(204, 199, 221)" align="center">CLICK VÀO Ô BÊN DƯỚI SẼ TỰ ĐỘNG SAO CHÉP KEY</h3><div><br /></div>
+            <p>
+                <button class="button" name="submit" onclick="copyToClipboard('#keytool')" type="submit">
+                    <span id="keytool">BẠN CHƯA LẤY KEY</span>
+                </button>
+            </p>
+        </div>
+    </div>
+    
+<style>
+.button {
+    background-color: #4c56af;
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.25),
+            2px 2px 2px rgba(0, 0, 0, 0.25),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 6px rgba(255, 255, 255, 0.2),
+            inset -1px -1px 6px rgba(218, 218, 218, 0.75);
+}
+</style>    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  
+    <script>
+      	var key = GetURLParameter('key');
+      	if(key != ""){
+	        document.getElementById("keytool").innerHTML = key;
+        }
+      
+        function GetURLParameter(sParam) {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) {
+                    return sParameterName[1];
+                }
+            }
+        }
+        function copyToClipboard(element) {
+            var $temp = $("<input>");
+            $("body").append($temp);
+            $temp.val($(element).text()).select();
+            document.execCommand("copy");
+            $temp.remove();
+            
+            return confirm('Bạn đã copy key');
+        }
+    </script>
+</body>
+</html>
+    </script>
+  <script type="text/javascript">var fps = document.getElementById("fps");var startTime = Date.now();var frame = 0;function tick(){var time = Date.now();frame++;if(time - startTime > 1000){fps.innerHTML = (frame / ((time - startTime) / 1000)).toFixed(1);startTime = time;frame = 0;}window.requestAnimationFrame(tick);}tick();</script>
+    </div>    
+   <script> 
+etElementById("fps");
+    var startTime = Date.now();
+    var frame = 0;
+    function tick() {
+      var time = Date.now();
+      frame++;
+      if (time - startTime > 1000) {
+        fps.innerHTML = (frame / ((time - startTime) / 1000)).toFixed(1);
+        startTime = time;
+        frame = 0;
+      }
+      window.requestAnimationFrame(tick);
+    }
+    tick();
+  </script>
+</body>
+</html>
+        </div>
+        <div class="snowflakes" aria-hidden="true">
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">⭐</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+  <div class="snowflake">🍁</div>
+</div>
+<style>
+  @-webkit-keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @-webkit-keyframes snowflakes-shake {
+    0%,100% {-webkit-transform:translateX(0);transform:translateX(0)}
+    50% {-webkit-transform:translateX(80px);transform:translateX(80px)}
+  }
+  @keyframes snowflakes-fall {
+    0% {top:-10%}
+    100% {top:100%}
+  }
+  @keyframes snowflakes-shake {
+    0%,100%{ transform:translateX(0)}
+    50% {transform:translateX(80px)}
+  }
+  .snowflake {
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    position:fixed;
+    top:-10%;
+    z-index:9999;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    cursor:default;
+    -webkit-animation-name:snowflakes-fall,snowflakes-shake;
+    -webkit-animation-duration:10s,3s;
+    -webkit-animation-timing-function:linear,ease-in-out;
+    -webkit-animation-iteration-count:infinite,infinite;
+    -webkit-animation-play-state:running,running;
+    animation-name:snowflakes-fall,snowflakes-shake;
+    animation-duration:10s,3s;
+    animation-timing-function:linear,ease-in-out;
+    animation-iteration-count:infinite,infinite;
+    animation-play-state:running,running;
+  }
+  .snowflake:nth-of-type(0){
+    left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s
+  }
+  .snowflake:nth-of-type(1){
+    left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s
+  }
+  .snowflake:nth-of-type(2){
+    left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s
+  }
+  .snowflake:nth-of-type(3){
+    left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s
+  }
+  .snowflake:nth-of-type(4){
+    left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s
+  }
+  .snowflake:nth-of-type(5){
+    left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s
+  }
+  .snowflake:nth-of-type(6){
+    left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s
+  }
+  .snowflake:nth-of-type(7){
+    left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s
+  }
+  .snowflake:nth-of-type(8){
+    left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s
+  }
+  .snowflake:nth-of-type(9){
+    left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s
+  }
+  .snowflake:nth-of-type(10){
+    left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s
+  }
+  .snowflake:nth-of-type(11){
+    left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s
+  }
+</style>
+<script>
+       function GiangLy() {
+
+        audio.play();
+
+      }
+      const GiangLy_List = [
+"/nhac/trichtien.mp3", //trichtien
+"/nhac/pikachu.mp3", //pikachu
+];
+//Random music
+let index = Math.floor(Math.random() * GiangLy_List.length);
+const audio = new Audio(GiangLy_List[index]);
+function GiangLy() {
+  audio.play();
+}
+document.addEventListener("click", GiangLy);
+audio.addEventListener("ended", function() {
+  index = (index + 1) % GiangLy_List.length;
+  audio.src = GiangLy_List[index];
+  audio.play();
+});
+      </script> 
+</body>
+</html>
