@@ -1,0 +1,125 @@
+import requests
+import random
+from datetime import datetime, timedelta
+from threading import Thread, Timer
+import os
+import telebot
+import re
+import sqlite3
+import webbrowser
+from telebot import types
+import time
+import base64
+import subprocess
+
+bot_start_time = datetime.now()
+current_time = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+def poll_bot():
+    while True:
+        try:
+            bot.polling(timeout=500000)
+        except Exception as e:
+            print(f"Có lỗi xảy ra: {e}")
+            print("Thử lại sau 5 giây...")
+            time.sleep(5)
+
+os.system('clear')
+logo=f"""
+\033[1;34m╔═════════════════════════════════════════════════════════════════╗
+\033[1;32m║ ██╗  ██╗██████╗ ████████╗  ████████╗ ██████╗  ██████╗ ██╗       ║
+\033[1;35m║ ██║  ██║██╔══██╗╚══██╔══╝  ╚══██╔══╝██╔═══██╗██╔═══██╗██║       ║
+\033[1;31m║ ███████║██║  ██║   ██║ █████╗ ██║   ██║   ██║██║   ██║██║       ║
+\033[1;33m║ ██╔══██║██║  ██║   ██║ ╚════╝ ██║   ██║   ██║██║   ██║██║       ║
+\033[1;34m║ ██║  ██║██████╔╝   ██║        ██║   ╚██████╔╝╚██████╔╝███████╗  ║
+\033[1;37m║ ╚═╝  ╚═╝╚═════╝    ╚═╝        ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝  ║
+\033[1;34m╠═════════════════════════════════════════════════════════════════╣
+\033[1;32m║➢ Author   : HDT - TOOL                                          ║
+\033[1;36m║➢ Youtube  : https://youtube.com/@HDT-TOOL                       ║
+\033[1;31m║➣ Nhóm Zalo  : https://zalo.me/g/bprmyn080                       ║
+\033[1;33m║➣ Website  : https://hdt-tool.blogspot.com                       ║
+\033[1;32m║➣ Nhóm Telegram : https://t.me/hdttool                           ║
+\033[1;34m╚═════════════════════════════════════════════════════════════════╝
+\033[1;32m ➣ ➣ ➣ ➣ ➣ ➣ \033[1;33mĐang Chạy Bot 🍁 HDT - TOOL🍁 \033[1;32m➣ ➣ ➣ ➣ ➣ ➣"""
+  
+print(logo)
+bot_token = '6462841541:AAFZbRq7Dtpye2CLRDwjvvgzhn8bb4Fx5Rw' #thay token bot nha ae token lấy ở botfather 
+
+header = {"Accept": "application/json", "Content-Type": "application/json"}
+
+bot = telebot.TeleBot(bot_token)
+session = requests.Session()
+
+allowed_users = []
+processes = []
+ADMIN_ID = 5668021745 
+
+allowed_users.extend([ADMIN_ID])
+
+import requests
+import random
+from datetime import datetime
+video_links = [
+    "https://hdttool2023.000webhostapp.com/_.mp4",
+    "https://hdttool2023.000webhostapp.com/+.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/3.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/4.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/5.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/6.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/7.mp4",
+    "https://baohayhomnay24h.000webhostapp.com/video/8.mp4",
+]
+
+user_key_count = {}
+@bot.message_handler(commands=['get_key'])
+def get_key(message):
+    ngay = int(datetime.now().strftime('%d'))
+    key1=str(ngay*199872767+168299)
+    key = 'HDT-' + key1
+    url = 'https://html-css-js.hdt-tool.repl.co/?key=' + key
+    like4m = requests.get(f'https://web1s.com/api?token=0cb3f67e-905e-4beb-b97e-075d25147645&url={url}').json()
+    web1s = requests.get(f'https://web1s.com/api?token=0cb3f67e-905e-4beb-b97e-075d25147645&url={url}').json()
+    if like4m['status'] == "error":
+        bot.reply_to(message, like4m['message'])
+    else:
+        link_key1 = like4m['shortenedUrl']
+        
+    if web1s['status'] == "error":
+        bot.reply_to(message, web1s['message'])
+    else:
+        link_key2 = web1s['shortenedUrl']
+        random_video_url = random.choice(video_links)
+        current_time = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+        user_id = message.from_user.id
+        if user_id not in user_key_count:
+            user_key_count[user_id] = 1
+        else:
+            user_key_count[user_id] += 1
+        
+        key_count = user_key_count[user_id]
+        message_text = f'🌺Admin Tool: HDT-TOOL 🌺\nLưu ý 🚨: Đây là key Tool không phải key bot\nBot 🔑: https://t.me/keyhdttool\nChủ sở hữu 👑: @llll0l0llll\nLấy key lúc🔑: {current_time}\nSupport 1📨: @llll0l0llll\nSupport 2📨: https://zalo.me/g/bprmyn080\nLink Key 1 🔑: {link_key1}'
+
+        admin_message = f"Key Là: {key}"
+        bot.send_message(ADMIN_ID, admin_message)
+
+        bot.send_video(message.chat.id, random_video_url, caption=message_text, parse_mode='html')
+
+
+@bot.message_handler(commands=['start'])
+def check_uptime(message):
+    current_time = datetime.now()
+    uptime = current_time - bot_start_time
+    days = uptime.days
+    hours, remainder = divmod(uptime.seconds, 3600)
+    minutes, seconds = divmod(remainder, 60)
+    
+    uptime_str = f"{days} days, {hours}:{minutes:02}:{seconds:02}"
+    bot.reply_to(message, f"Chào mừng bạn đã đến với 🍁HDT-TOOL🍁 Nhập /get_key để lấy key.\n🤖 Bot đã hoạt động trong {uptime_str}. 🤖")
+
+bot.polling()
+
+@bot.message_handler(func=lambda message: True)
+def echo_all(message):
+    bot.reply_to(message, '🚀Lệnh không hợp lệ. Vui lòng sử dụng lệnh /start để xem danh sách lệnh.🚀')
+
+if __name__ == "__main__":
+  bot.polling()
