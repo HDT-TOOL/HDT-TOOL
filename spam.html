@@ -83,12 +83,12 @@ def spam(message):
         bot.reply_to(message, 'VUI LÒNG NHẬP SỐ ĐIỆN THOẠI ')
         return
     if len(message.text.split()) == 2:
-        bot.reply_to(message, 'Vui Lòng Nhập Đúng Định Dạng | Ví Dụ: /spam 0987654321 50')
+        bot.reply_to(message, 'Vui Lòng Nhập Đúng Định Dạng | Ví Dụ: /spam 0987654321 100')
         return
     lap = message.text.split()[2]
     if lap.isnumeric():
-      if not (int(lap) > 0 and int(lap) <= 50):
-        bot.reply_to(message,"Vui Lòng Spam Trong Khoảng 1 - 50 Thôi !!")
+      if not (int(lap) > 0 and int(lap) <= 100):
+        bot.reply_to(message,"Vui Lòng Spam Trong Khoảng 1 - 100 Thôi !!")
         return
     else:
       bot.reply_to(message,"Sai Số Lần Spam !!!")
