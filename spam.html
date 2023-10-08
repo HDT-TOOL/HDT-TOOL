@@ -114,7 +114,6 @@ Danh sách lệnh:
 ┣➤/getkey: Để Lấy Key ✅
 ┣➤/key: Để Nhập Key ✅
 ┣➤/spam {SĐT} {Số Lần} ✅
-┣➤/check + [host] : Kiểm Tra AntiDDoS ✅
 ┣➤/help: Danh sách lệnh ✅
 ┣➤/time Thời Gian HĐ Bot ✅
 ┣➤/status Lượt Chạy Bot ✅
@@ -142,35 +141,7 @@ def show_uptime(message):
     minutes = int((uptime % 3600) // 60)
     seconds = int(uptime % 60)
     bot.reply_to(message, f'Bot Đã Hoạt Động Được: {hours} giờ, {minutes} phút, {seconds} giây')
-#check
-@bot.message_handler(commands=['check'])
-def check_ip(message):
-    if len(message.text.split()) != 2:
-        bot.reply_to(message, 'Vui lòng nhập đúng cú pháp.\nVí dụ: /check + [link website]')
-        return
-
-    url = message.text.split()[1]
-    
-    # Kiểm tra xem URL có http/https chưa, nếu chưa thêm vào
-    if not url.startswith(("http://", "https://")):
-        url = "http://" + url
-
-    # Loại bỏ tiền tố "www" nếu có
-    url = re.sub(r'^(http://|https://)?(www\d?\.)?', '', url)
-    
-    try:
-        ip_list = socket.gethostbyname_ex(url)[2]
-        ip_count = len(ip_list)
-
-        reply = f"Ip của website: {url}\nLà: {', '.join(ip_list)}\n"
-        if ip_count == 1:
-            reply += "Website có 1 ip có khả năng không antiddos."
-        else:
-            reply += "Website có nhiều hơn 1 ip khả năng antiddos rất cao.\nKhông thể tấn công website này."
-
-        bot.reply_to(message, reply)
-    except Exception as e:
-        bot.reply_to(message, f"Có lỗi xảy ra: {str(e)}")
+#check
 #admin
 @bot.message_handler(commands=['admin'])
 def admin_info(message):
