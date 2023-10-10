@@ -135,6 +135,7 @@ thang_nay = now.strftime("%m")
 nam_ = now.strftime("%Y")
  #--------------------KEY---------------&&#
 os.system('clear')
+os.system('clear')
 banner()
 a=now.strftime("%d")
 h=int(now.strftime("%d"))
@@ -149,20 +150,25 @@ ngay=int(strftime('%d'))
 key1=str(ngay*199872767+168299)
 key='HDT-'+key1
 long_url=(f"https://html-css-js.hdt-tool.repl.co/?key={key}")
+api_token='0cb3f67e-905e-4beb-b97e-075d25147645'
+url=requests.get(f'https://web1s.com/api?token={api_token}&url={long_url}').json()
 #dilink nhìn tự hiểu nha chứ ko hiểu t chịu
-url_dilink = requests.get(f'https://dilink.net/QL_api.php?token=3eedacbad8de78dafc867ef2d8a29e1a3e1c942b4d9b9b9533216590dc9c585c&url={long_url}').text
+url_dilink = requests.get(f'https://dilink.net/QL_api.php?token=c55907573c4c9674e5851b297de226a94320eeae7d8949165f6081ec77efc350&url={long_url}').text
 ##print(url_dilink)
 if '<link rel="canonical" href="' in url_dilink:
     link_key_dilink = url_dilink.split('<link rel="canonical" href="')[1].split('">')[0]
 else:
     link_key_dilink = 'Không Thể Tạo Url!!!'
 #print(link_key_dilink)
+status=url['status']
+link=url['shortenedUrl']
 file_key=f'key_ngay{ngay_hom_nay}.txt'
 file_key_cu=f'key_ngay{ngay_trc}.txt'
 check_file_key=os.path.exists(file_key)
 if check_file_key == False:
-   print(f"{thanh_xau}{vang}Đây Là Tool Free Nên Key Sẽ Thay Đổi Mỗi Ngày !!")   
-   print(f'{thanh_xau}{vang}Truy Cập Vào Link{trang}: {link_key_dilink} {vang}')
+   print(f"{thanh_xau}{vang}Đây Là Tool Free Nên Key Sẽ Thay Đổi Mỗi Ngày !!")
+   print(f'{thanh_xau}{vang}Truy Cập Vào Link{trang}: {link} {vang}Key Free')
+   print(f'{thanh_xau}{vang}Truy Cập Vào Link{trang}: {link_key_dilink} {vang}Key Free')
    print(f'{trang}-----------------------------------------------------------------')
    while(True):
       ma=input(f"{thanh_xau}{vang}Nhập API Key\033[1;32m Ngày \033[1;37m{today}: \033[1;33m")
@@ -184,8 +190,8 @@ elif check_file_key == True:
         print(f'{thanh_xau}{vang}Lấy Key Thành Công       ',end='\r')
         sleep(0.5)
     elif ma != key:
-        if os.path.exists(file_key) == True:
-            os.system(f'rm {file_key}')
+        if os.path.exists(file_key_cũ) == True:
+            os.system(f'rm {file_key_cũ}')
         os.system(f'rm {file_key}')
         print(f'{thanh_xau}{do}API Key Sai         ')
         while(True):
@@ -197,7 +203,7 @@ elif check_file_key == True:
                 luu.close()
                 break
             elif ma != key:
-                print(f'{thanh_xau}{do}API Key Sai           ')
+                print(f'{thanh_xau}{do}API Key Sai           ')           ')
 import os, sys, requests
 from time import sleep
 from pystyle import *
