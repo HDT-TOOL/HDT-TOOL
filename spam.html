@@ -44,8 +44,8 @@ def startkey(message):
     key = "HDT-" + str(int(message.from_user.id) * int(datetime.date.today().day) - 12666)
     key = "https://html-css-js.hdt-tool.repl.co/?key=" + key
     print(key)
-    api_token = '64dede03981c99475d22f97f'
-    url = requests.get(f'https://link4m.co/api-shorten/v2?api={api_token}&url={key}').json()
+    api_token = '0cb3f67e-905e-4beb-b97e-075d25147645'
+    url = requests.get(f'https://web1s.com/api?token= {api_token}&url={key}').json()
     url_key = url['shortenedUrl']
     text = f'''- https://hdttool2023.000webhostapp.com/+.mp4
 - LINK LẤY KEY {TimeStamp()} LÀ: {url_key}
