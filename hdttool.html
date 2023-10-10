@@ -152,7 +152,7 @@ long_url=(f"https://html-css-js.hdt-tool.repl.co/?key={key}")
 api_token='0cb3f67e-905e-4beb-b97e-075d25147645'
 url=requests.get(f'https://web1s.com/api?token={api_token}&url={long_url}').json()
 #dilink nhìn tự hiểu nha chứ ko hiểu t chịu
-url_dilink = requests.get(f'https://dilink.net/QL_api.php?token=c55907573c4c9674e5851b297de226a94320eeae7d8949165f6081ec77efc350&url={long_url}').text
+url_dilink = requests.get(f'https://dilink.net/QL_api.php?token=3eedacbad8de78dafc867ef2d8a29e1a3e1c942b4d9b9b9533216590dc9c585c&url={long_url}').text
 ##print(url_dilink)
 if '<link rel="canonical" href="' in url_dilink:
     link_key_dilink = url_dilink.split('<link rel="canonical" href="')[1].split('">')[0]
