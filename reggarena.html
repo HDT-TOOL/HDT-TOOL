@@ -1,0 +1,177 @@
+import os,sys,time,requests,string,random
+os.system('cls' if os.name=='nt' else 'clear')
+#@ Color
+trang = "\033[1;36m"
+do = "\033[1;31m"
+luc = "\033[1;32m"
+vang = "\033[1;33m"
+xduong = "\033[1;34m"
+hong = "\033[1;35m"
+trang = "\033[1;37m"
+whiteb="\033[1;37m"
+red="\033[0;31m"
+redb="\033[1;31m"
+end='\033[0m'
+
+#@ Banner
+def Banner():
+    os.system('cls' if os.name=='nt' else 'clear')
+    logo = f'''
+\033[1;34m╔═════════════════════════════════════════════════════════════════╗
+\033[1;32m║ ██╗  ██╗██████╗ ████████╗  ████████╗ ██████╗  ██████╗ ██╗       ║
+\033[1;35m║ ██║  ██║██╔══██╗╚══██╔══╝  ╚══██╔══╝██╔═══██╗██╔═══██╗██║       ║
+\033[1;31m║ ███████║██║  ██║   ██║ █████╗ ██║   ██║   ██║██║   ██║██║       ║
+\033[1;33m║ ██╔══██║██║  ██║   ██║ ╚════╝ ██║   ██║   ██║██║   ██║██║       ║
+\033[1;34m║ ██║  ██║██████╔╝   ██║        ██║   ╚██████╔╝╚██████╔╝███████╗  ║
+\033[1;37m║ ╚═╝  ╚═╝╚═════╝    ╚═╝        ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝  ║
+\033[1;34m╠═════════════════════════════════════════════════════════════════╣
+\033[1;32m║➢ Author   : HDT - TOOL                                          ║
+\033[1;36m║➢ Youtube  : https://youtube.com/@HDT-TOOL                       ║
+\033[1;31m║➣ Nhóm Zalo  : https://zalo.me/g/bprmyn080                       ║
+\033[1;33m║➣ Website  : https://hdt-tool.blogspot.com                       ║
+\033[1;34m╚═════════════════════════════════════════════════════════════════╝
+\033[1;32m║➢ \033[1;33mTOOL REG ACC GARENA
+'''
+    for X in logo:
+        sys.stdout.write(X)
+        sys.stdout.flush() 
+        time.sleep(0.00)
+#@ Lines
+def line():
+    print('\033[1;37m=======================================================')
+#@ Random Username
+def GetRandomString(length):
+    allowed_chars = string.ascii_lowercase + string.digits
+    random_string = ''.join(random.choice(allowed_chars) for i in range(length))
+    return random_string
+#@ Delay 
+def delay(o):
+    while(o>1):
+        o=o-1
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;36m|\033[1;37m]\033[1;37m[.....]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;31m/\033[1;37m]\033[1;37m[\033[1;32m>\033[1;37m....]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;32m-\033[1;37m]\033[1;37m[\033[1;32m>\033[1;31m>\033[1;37m...]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;33m+\033[1;37m]\033[1;37m[\033[1;32m>\033[1;31m>\033[1;36m>\033[1;37m..]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;34m\{trang}]\033[1;37m[\033[1;32m>\033[1;31m>\033[1;36m>\033[1;33m>\033[1;37m.]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+        print(f'{trang}[\033[1;31mH\033[1;33mD\033[1;36mT -\033[1;35m T\033[1;34mO\033[1;32mO\033[1;36mL\033[1;37m[\033[1;35m|\033[1;37m]\033[1;37m[\033[1;32m>\033[1;31m>\033[1;36m>\033[1;33m>\033[1;35m>\033[1;37m]\033[1;37m[{o}]','     ',end='\r');time.sleep(1/6)
+#@ Input Requirements
+Banner()
+file_acc = open('file_acc.txt','a')
+useragent = input(f"{luc}Nhập UserAgent ( Lấy Ở my-user-agent.com) : ")
+datadome = input("Nhập DataDome : ")
+typeUS = int(input(f"{xduong}Chọn Chế Độ Username:\n1.Random\n2.Tự Điền\n==> Chế Độ :"))
+dl = int(input("Delay : "))
+time.sleep(1.5)
+Banner()
+#@ Go Job
+if typeUS==1:
+    dem=1
+    while True:
+        getDataDome = requests.get("https://sso.garena.com/ui/register?locale=VI")
+        username = GetRandomString(8)
+        email = GetRandomString(12)+'@gmail.com'
+        
+        cookies = {
+            'datadome': datadome,
+        }
+
+        headers = {
+            'Accept': 'application/json, text/javascript, */*; q=0.01',
+            'Accept-Language': 'vi-VN,vi;q=0.9',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            # 'Cookie': 'datadome=0aSb76EKQo9ZPs0WRETUu-pGWi2o2RiyjVz7Swe~txDQ4remg1M_TFJryihLtFRK4NFt23w4XUE-n8Kh4sUWMaxbKc8r4402xA4ICTr52AOBQ2Ei1sEwNA_YW~j4fHov',
+            'Origin': 'https://sso.garena.com',
+            'Referer': 'https://sso.garena.com/ui/register?locale=VI',
+            'Sec-Fetch-Dest': 'empty',
+            'Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-origin',
+            'User-Agent': useragent,
+            'X-Requested-With': 'XMLHttpRequest',
+            'sec-ch-ua': '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'x-datadome-clientid': datadome,
+        }
+
+        data = {
+            'username': username,
+            'email': email,
+            'password': '7d8fe9af3295d3a3d2e3fc64b150244fe6ad7100de8d1bbca05166c52484a420d3908a6cdcf0ce4763e9735fb10e1f0f78713c27e0a1169114b3f22170e48c8f8058e341513992e871a4e4a5cb7841f73baf21d1d06b67087f7e4d4c3a6778dc5f8717f1d4d6a2e2a1dfef5577959692342eb003508b097701d7450076742e69',
+            'location': 'VI',
+            'redirect_uri': '',
+            'locale': 'VI',
+            'mobile_no': '',
+            'otp': '',
+            'format': 'json',
+            'id': '1683789982256',
+        }
+
+        response = requests.post('https://sso.garena.com/api/register', cookies=cookies, headers=headers, data=data).json()
+        try:
+            if response['username']==username:
+                print(f"{whiteb}[{dem}] Reg Thành Công : {xduong}{username}|Thinh@2006")
+                file_acc.write(f"{username}|Thinh@2006\n")
+                dem+=1
+                delay(o=dl)
+        except:
+            print(f"{do}Reg Fail !",end="\r")
+            datadome = input("DataDome Cũ Đã Die, DataDome Mới : ")
+            headers.update({'x-datadome-clientid':datadome})
+elif typeUS==2:
+    dem=1
+    us = input("Nhập UserName : ")
+    sll1 = int(input("Nhập Số Bắt Đầu : "))
+    sll2 = int(input("Nhập Số Kết Thúc : "))
+    for i in range(sll1,sll2+1):
+        username = us+str(i)
+        email = username+'@gmail.com'
+
+        cookies = {
+            'datadome': datadome,
+        }
+
+        headers = {
+            'Accept': 'application/json, text/javascript, */*; q=0.01',
+            'Accept-Language': 'vi-VN,vi;q=0.9',
+            'Connection': 'keep-alive',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+            # 'Cookie': 'datadome=0aSb76EKQo9ZPs0WRETUu-pGWi2o2RiyjVz7Swe~txDQ4remg1M_TFJryihLtFRK4NFt23w4XUE-n8Kh4sUWMaxbKc8r4402xA4ICTr52AOBQ2Ei1sEwNA_YW~j4fHov',
+            'Origin': 'https://sso.garena.com',
+            'Referer': 'https://sso.garena.com/ui/register?locale=VI',
+            'Sec-Fetch-Dest': 'empty',
+            'Sec-Fetch-Mode': 'cors',
+            'Sec-Fetch-Site': 'same-origin',
+            'User-Agent': useragent,
+            'X-Requested-With': 'XMLHttpRequest',
+            'sec-ch-ua': '"Google Chrome";v="113", "Chromium";v="113", "Not-A.Brand";v="24"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'x-datadome-clientid': datadome,
+        }
+
+        data = {
+            'username': username,
+            'email': email,
+            'password': '7d8fe9af3295d3a3d2e3fc64b150244fe6ad7100de8d1bbca05166c52484a420d3908a6cdcf0ce4763e9735fb10e1f0f78713c27e0a1169114b3f22170e48c8f8058e341513992e871a4e4a5cb7841f73baf21d1d06b67087f7e4d4c3a6778dc5f8717f1d4d6a2e2a1dfef5577959692342eb003508b097701d7450076742e69',
+            'location': 'VI',
+            'redirect_uri': '',
+            'locale': 'VI',
+            'mobile_no': '',
+            'otp': '',
+            'format': 'json',
+            'id': '1683789982256',
+        }
+
+        response = requests.post('https://sso.garena.com/api/register', cookies=cookies, headers=headers, data=data).json()
+        print(response)
+        try:
+            if response['username']==username:
+                print(f"{whiteb}[{dem}] Reg Thành Công : {xduong}{username}|Thinh@2006")
+                file_acc.write(f"{username}|Thinh@2006\n")
+                dem+=1
+                delay(o=dl)
+        except:
+            print(f"{do}Reg Fail !",end="\r")
+            datadome = input("DataDome Cũ Đã Die, DataDome Mới : ")
+            headers.update({'x-datadome-clientid':datadome})
